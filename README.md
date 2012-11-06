@@ -26,4 +26,4 @@ Since this was written LinkedIn has open sourced [cleo] (https://github.com/link
 3. db:setup and seed (needs name)
 4. rails s
 
-![screenshot of LinkedIn Autocomplete](/app/images/screenshot.png)
+![screenshot of LinkedIn Autocomplete](https://raw.github.com/ehwinter/linkedin-autocomplete/master/app/assets/images/screenshot.png)
