@@ -4,8 +4,13 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
       %title= content_for?(:title) ? yield(:title) : "Linkedin Autocomplete"
       %meta{:content => content_for?(:description) ? yield(:description) : "Linkedin Autocomplete", :name => "description"}
-        = stylesheet_link_tag "application", :media => "all"
+
+
+        = stylesheet_link_tag    "application", :media => "all"
         = javascript_include_tag "application"
+        %link{:href => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css", :rel => "stylesheet", :type => "text/css"}/
+        %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"}
+        %script{:src => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"}
         = csrf_meta_tags
         = yield(:head)
   %body{:class => "#{controller_name} #{action_name}"}
@@ -16,7 +21,7 @@
     #main{:role => "main"}
       .container
         .content
-          .row
+          .row-fluid
             .span12
               = render 'layouts/messages'
               = yield

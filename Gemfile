@@ -19,3 +19,4 @@ gem "launchy", ">= 2.1.2", :group => :test
 gem "capybara", ">= 1.1.2", :group => :test
 gem "bootstrap-sass", ">= 2.1.0.1"
 gem "quiet_assets", ">= 1.0.1", :group => :development
+gem "faker", ">= 1.0.1", :group => :development

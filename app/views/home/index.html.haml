@@ -1,2 +1,25 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+%h1 LinkedIn Style Autocomplete Using jQueryUI
+
+.row-fluid
+  -unless @people.nil? || @people.size == 0
+    .span4
+
+      %h3 One of these?
+      %ul
+        -@people.each do |person|
+          %li= person.name
+      %p
+        You can match any part of their name e.g. the middle 3 letters of the last name.
+    .span8
+      .autocomplete
+        #autocomplete-label
+          Type a name or part of a name or the letter of your choice..
+        / input style="width: 320px" id="dynamic"/
+        = content_tag "input", id: "auto-who-with",
+          placeholder: @people[0].name,style: "width: 500px;", data: {names: Person.find(:all)}{}
+
+
+
+  -else
+    .span12
+      Can't find any people in the database.  Did you run db:seed?
